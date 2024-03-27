@@ -10,3 +10,48 @@ jobs:
     uses: shopware/github-actions/.github/workflows/build-zip.yml@main
     with:
       extensionName: ${{ github.event.repository.name }}
+
+  docker:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: ${{ github.event.repository.name }}.zip
+      -
+        name: Generate Dockerfile
+        run: |
+          cat <<"EOF" > Dockerfile
+            ARG BASE_IMAGE
+            FROM ${BASE_IMAGE}
+
+            ARG PLUGIN_NAME
+            COPY *.zip /var/www/html/plugin.zip
+            
+            RUN cd /var/www/html/ \
+                && unzip -q -d custom/plugins plugin.zip \
+                && chown www-data:www-data -R custom/plugins \
+                && rm plugin.zip \
+                && vendor/bin/composer -d custom/plugins/${PLUGIN_NAME} require --no-update 'shopware/core:*' \
+                && vendor/bin/composer -d custom/plugins/${PLUGIN_NAME} require --no-update 'shopware/storefront:*' \
+                && vendor/bin/composer -d custom/plugins/${PLUGIN_NAME} require --no-update 'shopware/administration:*' \
+                && PACKAGE_NAME=$(vendor/bin/composer config name -d custom/plugins/${PLUGIN_NAME}) \
+                && echo $PACKAGE_NAME \
+                && vendor/bin/composer require --no-plugins --no-scripts -o $PACKAGE_NAME:*
+          EOF
+      -
+        name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+      -
+        name: Login into Github Docker Registery
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+      -
+        name: Build and push
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: ghcr.io/pweyck/swaglanguagepack/ci-e2e:${{ github.run_id }} # compute ${{ github.repository }} to lower
+          build-args: |
+            "BASE_IMAGE=ghcr.io/shopware/shopware/ci-e2e:trunk"
+            "PLUGIN_NAME=${{ github.event.repository.name }}"
