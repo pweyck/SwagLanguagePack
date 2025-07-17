@@ -77,7 +77,7 @@
     "searchButton": "Prеtraži",
     "searchPlaceholder": "Unesite termin za pretragu...",
     "searchAllResults": "Прикажи све резултате",
-    "searchResults": "{1} 1 rezultat|] 1, Inf [ %count% Rezultati",
+    "searchResults": "{1} 1 rezultat|[0, Inf [ %count% Rezultati",
     "searchDropdownTitle": "Pretraga padajućeg menija",
     "searchCloseButton": "Zatvorite padajuću pretragu",
     "supportInfo": "<strong>Pitanja u vezi vaše porudžbine?</strong><br /><strong><a href=\"tel:+4912345-123456789\">12345-123456789</a></strong> <small>Dnevni od 7:30 do 10:00 posle podne</small>",
@@ -422,7 +422,7 @@
     "companyVatPlaceholder": "PDV Reg.br."
   },
   "checkout": {
-    "itemCounter": "{1} 1 proizvod|]1,Inf[ %count% proizvoda",
+    "itemCounter": "{1} 1 proizvod|[0,Inf[ %count% proizvoda",
     "addressHeader": "Informacije za slanje",
     "addressLoginToggle": "Već imate nalog? Kliknite ovdje za prijavu.",
     "addressRegisterCardTitle": "Vaši lični podaci",
@@ -433,7 +433,7 @@
     "cartMetaTitle": "Korpa",
     "cartHeader": "Korpa",
     "cartUpdateSuccess": "Korpa ažurirana.",
-    "cartScreenReaderUpdate": "Korpa za kupovinu sadrži jednu stavku. Ukupna vrednost korpe je %total%.|Korpa za kupovinu sadrži %count% artikala. Ukupna vrednost korpe je %total%.",
+    "cartScreenReaderUpdate": "{1}Korpa za kupovinu sadrži jednu stavku. Ukupna vrednost korpe je %total%.|[0,Inf[Korpa za kupovinu sadrži %count% artikala. Ukupna vrednost korpe je %total%.",
     "continueShopping": "Nastavite kupovinu",
     "emptyCart": "Vaša korpa je prazna.",
     "proceedToCart": "Prikaz korpa za kupovinu",
@@ -512,7 +512,7 @@
     "finishChangePayment": "Promenite način plaćanja",
     "finishPaymentFailed": "Nažalost, proces plaćanja krenuo naopako. Promenite način plaćanja da biste završili porudžbinu. <a href=\"%editOrderUrl%\">Promena način plaćanja</a>",
     "codeAddedSuccessful": "Poklon kod uspešno dodat.",
-    "addToCartSuccess": "{1} 1 proizvod dodan u vašu korpu za kupovinu. |] 1, Inf [ %count% proizvoda dodato u vašu korpu za kupovinu.",
+    "addToCartSuccess": "{1} 1 proizvod dodan u vašu korpu za kupovinu. |[0, Inf [ %count% proizvoda dodato u vašu korpu za kupovinu.",
     "shippingCosts": "Detalji isporuke",
     "shippingCountry": "Zemlja isporuke",
     "paymentMethod": "Način plaćanja",
@@ -640,7 +640,7 @@
     "success": "Primili smo Vaš zahtev za kontakt i obradićemo ga u najkraćem mogućem roku."
   },
   "search": {
-    "headline": "{0} 0 proizvodi pronađeni za \"%searchTerm%\" | {1} Jedan proizvod pronađen za \"%searchTerm%\" |] 1, Inf [ %count% pronađeni proizvodi za \"%searchTerm%“",
+    "headline": "{0} 0 proizvodi pronađeni za \"%searchTerm%\" | {1} Jedan proizvod pronađen za \"%searchTerm%\" |[0, Inf [ %count% pronađeni proizvodi za \"%searchTerm%“",
     "metaTitle": "Rezultat pretrage"
   },
   "detail": {
@@ -658,13 +658,13 @@
     "dataColumnPrice": "Jedinična cena",
     "dataColumnReferencePrice": "Osnovna cena",
     "deliveryTimeAvailable": "Dostupno, vreme isporuke: %name%",
-    "deliveryTimeRestock": "{1} Dostupno u 1 dan, vreme isporuke %name%|] 1, inf [Dostupno u %restockTime% dani, vreme isporuke %name%",
+    "deliveryTimeRestock": "{1} Dostupno u 1 dan, vreme isporuke %name%|[0, inf [Dostupno u %restockTime% dani, vreme isporuke %name%",
     "soldOut": "Nije više dostupno",
     "tabsReview": "Recenzije",
     "reviewTitle": "%count% od %total% recenzija",
     "reviewVerifiedItemTooltip": "Verifikovani kupac",
     "reviewCommentLabel": "Naša povratna informacija: ",
-    "reviewLinkText": "{1} Recenzija|]1,Inf[ Recenzije",
+    "reviewLinkText": "{1} Recenzija|[0,Inf[ Recenzije",
     "reviewFormRatingLabel": "Vaša ocena",
     "reviewFormTitleLabel": "Zvanje",
     "reviewFormTitlePlaceholder": "Unesi titulu...",
@@ -691,7 +691,7 @@
     "reviewSortLabel": "Poređaj po",
     "reviewSortTopRatedLabel": "Najbolje ocenjeno",
     "reviewSortNewLabel": "Najnovije",
-    "reviewCountAfter": "{1} Recenzija|]1,Inf[ Recenzije",
+    "reviewCountAfter": "{1} Recenzija|[0,Inf[ Recenzije",
     "reviewCountBefore": "od",
     "reviewListEmpty": "Nema komentara found. Podelite svoje uvide sa drugima.",
     "reviewLoginHeader": "Prijava",
@@ -758,7 +758,7 @@
     "wishlistMergeHint": "Vaša lista želja može da sadrži proizvode koji su dodani i sačuvani tokom prethodne posete.",
     "wishlistEmptyHeader": "Vaša lista želja je prazna",
     "wishlistEmptyDescription": "Pripazi na proizvode koji vam se sviđaju tako što ćete ih dodati na listu želja.",
-    "deliveryTimeRestock": "{1} Dostupno u 1 dan, vreme isporuke %name%|] 1, inf [Dostupno u %restockTime% dani, vreme isporuke %name%",
+    "deliveryTimeRestock": "{1} Dostupno u 1 dan, vreme isporuke %name%|[0, inf [Dostupno u %restockTime% dani, vreme isporuke %name%",
     "deliveryShipping": "Ovaj proizvod biće dostupan od",
     "remove": "Ukloni %product_name% sa liste želja"
   },
